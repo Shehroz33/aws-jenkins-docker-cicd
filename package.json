@@ -2,17 +2,24 @@
   "name": "ci-cd-demo",
   "version": "1.0.0",
   "description": "Simple Node.js demo app for Jenkins + Docker CI/CD",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js",
+    "start": "node server.js",
+    "dev": "node server.js",
     "build": "echo \"Build successful\"",
-    "test": "echo \"Tests passed\""
+    "test": "jest --runInBand"
   },
   "keywords": ["jenkins", "docker", "ci", "cd", "devops", "nodejs"],
   "author": "Shehroz Amjad",
   "license": "ISC",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   }
 }
