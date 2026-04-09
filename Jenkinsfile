@@ -11,11 +11,11 @@ pipeline {
         stage('Build & Test') {
             steps {
                 sh '''
-                    node -v
-                    npm -v
-                    npm install
-                    npm run build
-                    npm run test
+                    docker run --rm \
+                      -v "$WORKSPACE":/app \
+                      -w /app \
+                      node:18-alpine \
+                      sh -c "npm install && npm run build && npm run test"
                 '''
             }
         }
@@ -52,7 +52,7 @@ pipeline {
             echo 'Pipeline failed'
         }
         always {
-            echo 'Pipeline finished'
+            sh 'docker ps -a || true'
         }
     }
 }
