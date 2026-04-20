@@ -146,7 +146,7 @@ server {
 - Webhook-based CI/CD automation
 - Nginx reverse proxy without a domain
 - AWS Security Group best practices
-added the webhook
+added the webhook cgvdzz
 
 ---
 
